@@ -1,32 +1,163 @@
-.App {
-  text-align: center;
+body{
+  text-align:center;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+   user-select: none;
+   background:rgb(236, 236, 236);
+   padding:14px 0px 0px 0px;
+}
+.logoText{
+  height:100px;
+  width:100px;
+  display:inline-block;
+  border:1px solid black;
+}
+.logo{
+  box-shadow:0px 0px 20px white;
+  min-width:200px;
+  max-width:500px;
+  height:200px;
+  margin:10px auto 10px auto;
+  background-image:url('flip.png');
+  background-size:500px 210px;;
+  background-repeat:no-repeat;
+  filter: grayscale(100%);
+  border-radius:40px;
+}
+.App{
+  text-align:center;
+}
+.menu{
+  width: 300px;
+  height:150px;
+  box-shadow:0px 0px 20px 5px black;
+  margin:10px;
+  background-size: 230px 90px;
+  background-repeat:no-repeat;
+  background-position:center;
+  border:none;
+  background-color:white;
+}
+.menu:hover{
+  box-shadow:0px 0px 2px 2px black;
+}
+.menuButtons{
+  margin:20px auto 0px auto;
+  text-align:center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.backFace{
+  width:140px;
+  height:180px;
+  margin:5px;
+  display:inline-block;
+  background:white;
+  background-size:90px 100px;
+  background-repeat:no-repeat;
+  background-position:center;
+  box-shadow:0px 0px 10px black;
+  text-align:center;
+}
+.tile{
+  width:140px;
+  height:180px;
+  opacity:0.05;
+}
+.flipped{
+animation-name: flip;
+animation-duration: 1s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes flip {
+  0%   {transform: rotateY(90deg);opacity:0;}
+  100% {transform:rotateY(0deg);opacity:1;}
 }
-
-.App-link {
-  color: #61dafb;
+.solved{
+width:140px;
+height:180px;
+filter: grayscale(100%);
+pointer-events: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.solved .backFace{
+  filter: grayscale(100%);
+}
+.backToMenu{
+display:block;
+width:300px;
+height:60px;
+border:none;
+background:white;
+box-shadow:0px 0px 10px black;
+margin:10px auto 10px auto;
+font-size:30px;
+outline:none;
+font-family:'lobster';
+background:rgb(187, 187, 187);
+color:white;
+text-shadow:0px 0px 20px black;
+}
+.backToMenu:hover{
+  box-shadow:0px 0px 4px 2px black;
+}
+.youWin{
+  box-shadow:0px 0px 20px 4px black;
+  border-radius:5px;
+  width:200px;
+  height:200px;
+  font-size:30px;
+  line-height:350px;
+  background-size:202px 202px;
+  color:white;
+  text-shadow:0px 0px 10px black;
+  margin:15px auto 20px auto;
+}
+.win{
+display:block;
+}
+.notYet{
+display:none;
+}
+@media screen and (max-width:500px){
+  .logo{
+    width:200px;
+    height:70px;
+    border-radius:0px;
+    margin:auto;
+    background-image:url('flip.png');
+    background-size:200px 70px;
+    background-repeat:no-repeat;
   }
-  to {
-    transform: rotate(360deg);
+  .backFace{
+    width:80px;
+    height:110px;
+    margin:5px;
+    display:inline-block;
+    background-size:60px 70px;
+    box-shadow:0px 0px 10px black;
+    text-align:center;
+  }
+  .tile{
+    width:80px;
+    height:110px;
+    opacity:0;
+  }
+  .flipped{
+  animation-name: flip;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  }
+  .solved{
+    width:80px;
+    height:110px;
+    filter: grayscale(100%);
+    pointer-events: none;
+    }
+  .solved .backFace{
+      filter: grayscale(100%);
   }
 }
